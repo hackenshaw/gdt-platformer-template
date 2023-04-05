@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://crvn4hkcubnof"]
+
+[ext_resource type="Script" path="res://addons/godot-console/scripts/console_container.gd" id="1_d6663"]
+[ext_resource type="Script" path="res://scripts/Console.gd" id="1_hlvnt"]
+
+[node name="Console" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_hlvnt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopHalf" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="BottomHalf" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BottomHalf"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ConsoleContainer" type="VBoxContainer" parent="VBoxContainer/BottomHalf/MarginContainer"]
+layout_mode = 2
+script = ExtResource("1_d6663")

@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpss3yj5u4v3l"]
+
+[ext_resource type="Script" path="res://addons/monitor_overlay/monitor_overlay.gd" id="1_ayvy6"]
+[ext_resource type="Script" path="res://scripts/MonitorOverlay.gd" id="1_we1p4"]
+
+[node name="MonitorOverlay" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_we1p4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LeftSide" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TopLeft" type="PanelContainer" parent="MarginContainer/HBoxContainer/LeftSide"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/LeftSide/TopLeft"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="MonitorOverlay" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LeftSide/TopLeft/MarginContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+script = ExtResource("1_ayvy6")
+process = true
+physics_process = true
+static_memory = true
+max_static_memory = true
+objects_drawn = true
+primitives_drawn = true
+total_draw_calls = true
+sampling_rate = 3.0
+normalize_units = false
+background_color = Color(0, 0, 0, 0.0627451)
+graph_color = Color(0.270588, 0.529412, 0, 0.486275)
+graph_antialiased = true
+
+[node name="BottomLeft" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LeftSide"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="RightSide" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0

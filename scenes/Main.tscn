@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=3 uid="uid://dim1drqk7tdwh"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_1po6n"]
+[ext_resource type="PackedScene" uid="uid://dmqvtxxrijsq0" path="res://scenes/Player.tscn" id="1_q1l41"]
+[ext_resource type="PackedScene" uid="uid://crvn4hkcubnof" path="res://scenes/Console.tscn" id="2_6ogr4"]
+[ext_resource type="PackedScene" uid="uid://bciwbnkwslu3e" path="res://scenes/PauseMenu.tscn" id="2_080a2"]
+[ext_resource type="PackedScene" uid="uid://duqcippdw1h7s" path="res://scenes/Camera25D.tscn" id="3_hi7fu"]
+[ext_resource type="PackedScene" uid="uid://8sd0gcl6hu2k" path="res://scenes/levels/Level_0.tscn" id="3_ifcgy"]
+[ext_resource type="PackedScene" uid="uid://bpss3yj5u4v3l" path="res://scenes/MonitorOverlay.tscn" id="3_th18i"]
+[ext_resource type="PackedScene" uid="uid://dh4gm3mf2mocr" path="res://scenes/TitleScreen.tscn" id="7_omhca"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xfyvf"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_d2437"]
+sky_material = SubResource("ProceduralSkyMaterial_xfyvf")
+
+[sub_resource type="Environment" id="Environment_modoh"]
+background_mode = 2
+sky = SubResource("Sky_d2437")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_1po6n")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866026, -0.5, 0.75, -0.433013, 2.08165e-12, 10, 2.08165e-12)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_modoh")
+
+[node name="Player" parent="." instance=ExtResource("1_q1l41")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="Level_0" parent="." instance=ExtResource("3_ifcgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 10)
+
+[node name="Camera25D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_hi7fu")]
+transform = Transform3D(-0.00191365, -0.0377132, 0.999287, 6.77746e-05, 0.999289, 0.0377134, -0.999998, 0.000139897, -0.00190973, 2.08165e-12, 2, 2.08165e-12)
+target = NodePath("../Player")
+offset = Vector3(6, 2, 2.08165e-12)
+
+[node name="MonitorOverlay" parent="." instance=ExtResource("3_th18i")]
+
+[node name="Console" parent="." instance=ExtResource("2_6ogr4")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_080a2")]
+
+[node name="TitleScreen" parent="." instance=ExtResource("7_omhca")]
+
+[connection signal="activated" from="Console" to="Player" method="_on_console_activated"]
+[connection signal="deactivated" from="Console" to="Player" method="_on_console_deactivated"]
