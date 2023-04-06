@@ -1,6 +1,8 @@
 # Godot 2.5D Platformer Template
 A simple template for a 2.5D platformer in Godot
 
+# Introduction Video
+[![Watch the video](https://img.youtube.com/vi/GEiaz6Nn7-0/maxresdefault.jpg)](https://youtu.be/GEiaz6Nn7-0)
 
 ## TODO
 
