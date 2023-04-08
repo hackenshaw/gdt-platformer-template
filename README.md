@@ -29,9 +29,11 @@ A simple template for a 2.5D platformer in Godot
 - [x] Debug HUD
 - [x] Fullscreen toggle (command in console)
 - [x] Add unit testing framework (Gut)
+- [x] Update to GUT 9
 - [ ] Write unit tests
 - [ ] Audio player
 - [ ] Subtitles system
+- [ ] Write proper user documentation
 
 ## Credits
 
@@ -42,4 +44,5 @@ A simple template for a 2.5D platformer in Godot
 - Prototype Textures: [Kenney](www.kenney.nl)
 - Camera Movement: [The Shaggy Dev](https://youtu.be/RVtcnkuNUIk) ([Code](https://github.com/theshaggydev/the-shaggy-dev-projects/tree/main/projects/godot-3/screen-shake))
 - Unit Testing framework: [Gut](https://github.com/bitwes/Gut)
+
  
