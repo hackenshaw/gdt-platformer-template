@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Console="*res://addons/godot-console/scripts/console.gd"
+SoundManager="*res://addons/sound_manager/sound_manager.tscn"
 
 [display]
 
@@ -32,7 +33,7 @@ naming/scene_name_casing=1
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/monitor_overlay/plugin.cfg", "res://addons/godot-console/plugin.cfg", "res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/monitor_overlay/plugin.cfg", "res://addons/godot-console/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
 
 [input]
 
@@ -76,6 +77,7 @@ ui_console={
 
 [layer_names]
 
+3d_physics/layer_2="Ground"
 3d_physics/layer_4="Player"
 3d_physics/layer_8="SceneManager"
 

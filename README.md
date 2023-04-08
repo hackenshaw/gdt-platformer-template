@@ -31,9 +31,10 @@ A simple template for a 2.5D platformer in Godot
 - [x] Add unit testing framework (Gut)
 - [x] Update to GUT 9
 - [ ] Write unit tests
-- [ ] Audio player
+- [x] Audio player
 - [ ] Subtitles system
 - [ ] Write proper user documentation
+
 
 ## Credits
 
@@ -44,5 +45,7 @@ A simple template for a 2.5D platformer in Godot
 - Prototype Textures: [Kenney](www.kenney.nl)
 - Camera Movement: [The Shaggy Dev](https://youtu.be/RVtcnkuNUIk) ([Code](https://github.com/theshaggydev/the-shaggy-dev-projects/tree/main/projects/godot-3/screen-shake))
 - Unit Testing framework: [Gut](https://github.com/bitwes/Gut)
-
+- Audio Manager: [Godot Sound Manager](https://github.com/nathanhoad/godot_sound_manager)
+- Music: Indie Summer by [RomanSenykMusic](https://pixabay.com/users/romansenykmusic-11989248) from [Pixabay](https://pixabay.com)
+- Wind Sound Effect: [SoundsForYou](https://pixabay.com/users/soundsforyou-4861230) from [Pixabay](https://pixabay.com)
  

@@ -15,6 +15,10 @@ var _active: bool = true
 var direction: Vector3 = Vector3.ZERO
 var lastDirection: Vector3 = Vector3.FORWARD
 
+var _footstepSound: AudioStream = preload("res://resources/audio/sfx/steps_floor.ogg")
+
+var rng = RandomNumberGenerator.new()
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -60,9 +64,16 @@ func _physics_process(delta):
 	# rotate player to face movement direction
 	model.rotation.y = lerp_angle(model.rotation.y, atan2(lastDirection.x, lastDirection.z), ROTATION_SPEED * delta)
 
+
 func _on_console_activated():
 	_active = false
 
 
 func _on_console_deactivated():
 	_active = true
+
+
+func _on_area_3d_body_entered(_body: Node3D) -> void:
+	var random_pitch = rng.randf_range(0.5, 1.5)
+	var asPlayer = SoundManager.play_sound(_footstepSound, "SFX")
+	asPlayer.pitch_scale = random_pitch
