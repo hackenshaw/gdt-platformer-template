@@ -1,26 +1,29 @@
-[gd_scene load_steps=12 format=3 uid="uid://dim1drqk7tdwh"]
+[gd_scene load_steps=13 format=3 uid="uid://dim1drqk7tdwh"]
 
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_1po6n"]
 [ext_resource type="PackedScene" uid="uid://dmqvtxxrijsq0" path="res://scenes/Player.tscn" id="1_q1l41"]
 [ext_resource type="PackedScene" uid="uid://crvn4hkcubnof" path="res://scenes/Console.tscn" id="2_6ogr4"]
 [ext_resource type="PackedScene" uid="uid://bciwbnkwslu3e" path="res://scenes/PauseMenu.tscn" id="2_080a2"]
+[ext_resource type="Texture2D" uid="uid://dqxwrnl1tr53l" path="res://resources/textures/mud_road_puresky_4k.exr" id="2_kxjxq"]
 [ext_resource type="PackedScene" uid="uid://duqcippdw1h7s" path="res://scenes/Camera25D.tscn" id="3_hi7fu"]
 [ext_resource type="PackedScene" uid="uid://8sd0gcl6hu2k" path="res://scenes/levels/Level_0.tscn" id="3_ifcgy"]
 [ext_resource type="PackedScene" uid="uid://bpss3yj5u4v3l" path="res://scenes/MonitorOverlay.tscn" id="3_th18i"]
 [ext_resource type="PackedScene" uid="uid://dh4gm3mf2mocr" path="res://scenes/TitleScreen.tscn" id="7_omhca"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xfyvf"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pnk2n"]
+panorama = ExtResource("2_kxjxq")
 
 [sub_resource type="Sky" id="Sky_d2437"]
-sky_material = SubResource("ProceduralSkyMaterial_xfyvf")
+sky_material = SubResource("PanoramaSkyMaterial_pnk2n")
 
 [sub_resource type="Environment" id="Environment_modoh"]
 background_mode = 2
 sky = SubResource("Sky_d2437")
 tonemap_mode = 2
 glow_enabled = true
+fog_light_color = Color(0.401337, 0.43415, 0.485725, 1)
+fog_aerial_perspective = 0.5
+fog_sky_affect = 0.5
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_1po6n")

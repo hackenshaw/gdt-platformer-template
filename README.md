@@ -6,7 +6,7 @@ A simple template for a 2.5D platformer in Godot
 
 ## TODO
 
-- [ ] Skybox/nice looking environment 
+- [x] Skybox/nice looking environment 
 - [ ] Antialiasing
 - [x] Player stand-in 
 - [x] Keyboard and gamepad support
