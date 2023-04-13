@@ -14,6 +14,8 @@ config/name="2.5D Platformer Template"
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/bg_color=Color(0.109804, 0.109804, 0.109804, 1)
+boot_splash/image="res://icon.png"
+boot_splash/fullsize=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -24,8 +26,10 @@ Globals="*res://scripts/Globals.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/mode=3
+window/handheld/orientation=4
 window/stretch/mode="viewport"
 
 [editor]
@@ -35,6 +39,10 @@ naming/scene_name_casing=1
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/monitor_overlay/plugin.cfg", "res://addons/godot-console/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
+
+[filesystem]
+
+import/fbx/enabled=false
 
 [input]
 
@@ -76,15 +84,10 @@ ui_console={
 ]
 }
 
-[input_devices]
-
-pointing/emulate_touch_from_mouse=true
-
 [layer_names]
 
 3d_physics/layer_2="Ground"
 3d_physics/layer_4="Player"
-3d_physics/layer_8="SceneManager"
 
 [rendering]
 

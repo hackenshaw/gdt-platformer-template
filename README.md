@@ -34,7 +34,7 @@ A simple template for a 2.5D platformer in Godot
 - [x] Audio player
 - [ ] Subtitles system
 - [ ] Write proper user documentation
-- [ ] Touch support for mobile
+- [x] Touch support for mobile
 - [ ] Grass with scatter system
 
 
@@ -51,5 +51,5 @@ A simple template for a 2.5D platformer in Godot
 - Music: Indie Summer by [RomanSenykMusic](https://pixabay.com/users/romansenykmusic-11989248) from [Pixabay](https://pixabay.com)
 - Wind Sound Effect: [SoundsForYou](https://pixabay.com/users/soundsforyou-4861230) from [Pixabay](https://pixabay.com)
 - Virtual Joystick: [Marco Fazio](https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot) 
-
+- Grass: [devmar](https://www.youtube.com/watch?v=gN8kFjE7_kI)
  

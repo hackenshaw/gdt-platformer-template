@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://duqcippdw1h7s" path="res://scenes/Camera25D.tscn" id="3_hi7fu"]
 [ext_resource type="PackedScene" uid="uid://8sd0gcl6hu2k" path="res://scenes/levels/Level_0.tscn" id="3_ifcgy"]
 [ext_resource type="PackedScene" uid="uid://bpss3yj5u4v3l" path="res://scenes/MonitorOverlay.tscn" id="3_th18i"]
-[ext_resource type="PackedScene" uid="uid://dh4gm3mf2mocr" path="res://scenes/TitleScreen.tscn" id="7_omhca"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://joystick/virtual_joystick.tscn" id="10_rcodp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pnk2n"]
 panorama = ExtResource("2_kxjxq")
@@ -46,13 +46,29 @@ transform = Transform3D(-0.00191365, -0.0377132, 0.999287, 6.77746e-05, 0.999289
 target = NodePath("../Player")
 offset = Vector3(6, 2, 2.08165e-12)
 
+[node name="HUD" type="Container" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Virtual Joystick" parent="HUD" instance=ExtResource("10_rcodp")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+pressed_color = Color(0.745098, 0.745098, 0.745098, 0.501961)
+visibility_mode = 1
+action_left = "backward"
+action_right = "forward"
+action_up = "up"
+action_down = "down"
+
 [node name="MonitorOverlay" parent="." instance=ExtResource("3_th18i")]
 
 [node name="Console" parent="." instance=ExtResource("2_6ogr4")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_080a2")]
-
-[node name="TitleScreen" parent="." instance=ExtResource("7_omhca")]
 
 [connection signal="activated" from="Console" to="Player" method="_on_console_activated"]
 [connection signal="deactivated" from="Console" to="Player" method="_on_console_deactivated"]
